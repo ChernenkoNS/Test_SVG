@@ -1,0 +1,57 @@
+
+
+/* .scroll-container {
+  /* box-sizing: cover; */
+  /* position: relative; */
+  /* width: 35%; */
+
+  /* background-color: red; */
+/* }  */
+
+.image {
+  /* width: 1200px;
+  height: 300px; */
+  /* display: block; */
+  /* background-size: contain; */
+
+
+
+  box-sizing: cover;
+  background-repeat: no-repeat;
+
+
+  /* position: absolute; */
+  /* top: 250%;
+  left: 250%; */
+
+  transition: transform 0.7s ease-out;
+
+  
+}
+
+
+
+
+
+
+
+
+.rew {
+  max-width: 100%;
+  height: 800px;
+  background-color: aquamarine;
+}
+
+.zaq {
+  width: 600px;
+  height: 800px;
+  background-color: aqua;
+}
+
+.asd {
+  display: flex;
+}
+
+
+
+
