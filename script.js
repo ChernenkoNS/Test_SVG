@@ -13,28 +13,60 @@ window.addEventListener("mousemove", (event) => {
   const containerRect = imageArea.getBoundingClientRect();
   const containerRect1 = imageElement.getBoundingClientRect();
 
-  const mouseX = event.clientX - containerRect.left;
-  const mouseY = event.clientY - containerRect.top;
+  const containerRectWidth = containerRect.width
+  const containerRectWidth1 = containerRect1.width
+
+  const containerRectHeight = containerRect.height
+  const containerRectHeight1 = containerRect1.height
+
+const containerWidthDelta = containerRectWidth - containerRectWidth1
+const containerHeightDelta = containerRectHeight - containerRectHeight1
+
+
+  const windowWidth = window.innerWidth
+  const windowHeight = window.innerHeight
+
+  const widthRatio = windowWidth /  containerWidthDelta
+  const heightRatio = windowHeight /  containerHeightDelta
+
+
+
+  
+  
+  
+  
+  const  mouseX = event.clientX;
+  const mouseY = event.clientY;
+
+  const coordinatesX = mouseX / widthRatio 
+  const coordinatesY = mouseY / heightRatio 
+
+
+
+  
+
+
+
 
   //   const maxX = (containerRect.width - containerRect1.width) / 2 ;
   //   const maxY = (containerRect.height - containerRect1.height) / 2;
 
-  const maxX = 11;
-  const maxY = 15;
+  // const maxX = 11;
+  // const maxY = 15;
 
-  const clampedX = Math.min(
-    maxX,
-    Math.max(-maxX, mouseX - containerRect1.width / 2)
-  );
-  const clampedY = Math.min(
-    maxY,
-    Math.max(-maxY, mouseY - containerRect1.height / 2)
-  );
+  // const clampedX = Math.min(
+  //   maxX,
+  //   Math.max(-maxX, mouseX - containerRect1.width / 2)
+  // );
+  // const clampedY = Math.min(
+  //   maxY,
+  //   Math.max(-maxY, mouseY - containerRect1.height / 2)
+  // );
 
-  const imageXPercent = (clampedX / containerRect.width) * 100;
-  const imageYPercent = (clampedY / containerRect.height) * 100;
+  // const imageXPercent = (clampedX / containerRect.width) * 100;
+  // const imageYPercent = (clampedY / containerRect.height) * 100;
 
-  imageElement.style.transform = `translate(${imageXPercent}%, ${imageYPercent}%)`;
+  imageElement.style.transform = `translate(${coordinatesX}px   , ${coordinatesY}px)`;
 });
 
 
