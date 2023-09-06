@@ -2,16 +2,18 @@ const imageArea = document.querySelector(".image-container");
 const imageElement = document.querySelector(".image");
 
 window.addEventListener("mousemove", (event) => {
-  const containerRect = imageArea.getBoundingClientRect();
-  const containerRect1 = imageElement.getBoundingClientRect();
+  imageElement.style.transform = `translate(240px , 165px)`;
 
-  const containerRectWidth = containerRect.width;
-  const containerRectWidth1 = containerRect1.width;
+  const containerImageArea = imageArea.getBoundingClientRect();
+  const containerImageElement = imageElement.getBoundingClientRect();
 
-  const containerRectHeight = containerRect.height;
-  const containerRectHeight1 = containerRect1.height;
+  const containerRectWidth = containerImageArea.width;
+  const containerRectWidth1 = containerImageElement.width;
 
-  const equalizationFactor = 15;
+  const containerRectHeight = containerImageArea.height;
+  const containerRectHeight1 = containerImageElement.height;
+
+  const equalizationFactor = 20;
 
   const containerWidthDelta =
     containerRectWidth - containerRectWidth1 - equalizationFactor;
@@ -27,12 +29,8 @@ window.addEventListener("mousemove", (event) => {
   const mouseX = event.clientX;
   const mouseY = event.clientY;
 
-  const coordinatesX = mouseX / widthRatio;
-  const coordinatesY = mouseY / heightRatio;
-
-  imageElement.style.x = "240";
-  imageElement.style.y = "165";
+  const coordinatesX = mouseX / widthRatio + 240;
+  const coordinatesY = mouseY / heightRatio + 165;
 
   imageElement.style.transform = `translate(${coordinatesX}px   , ${coordinatesY}px)`;
 });
-

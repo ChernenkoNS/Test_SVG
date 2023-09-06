@@ -1,4 +1,6 @@
 
 .image {
+  transform: translate(274.176px, 210.442px);
   transition: transform 0.7s ease-out;
+
 }
